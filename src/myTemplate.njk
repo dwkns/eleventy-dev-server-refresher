@@ -1,0 +1,35 @@
+---
+permalink: '/'
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just a title</title>
+
+    <script>
+    async function fetchAsync() {
+      const url = "/reload/" + btoa("{{ page.inputPath }}") // convert template path to b64
+      let response = await fetch(url)
+      console.log(`Sent: ${url} — Recieved ${response.status}`)
+    }
+  </script>
+</head>
+<body>
+
+  <p>The Template for this page is: {{page.inputPath}}</p>
+  <p>The date is: {{site.date}}</p>
+
+  <form id="refresh button" method="get">
+    <button
+      class="p-2 bg-yellow-400 rounded"
+      onclick="fetchAsync()"
+      type="button"
+    >
+      Tell the Dev Server to do stuff
+    </button>
+  </form>
+</body>
+</html>

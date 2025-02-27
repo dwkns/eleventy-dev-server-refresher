@@ -1,10 +1,10 @@
 {
-  "name": "refresher",
+  "name": "eleventy-dev-server-refresher",
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^3.0.0"
   },
   "scripts": {
     "dev": "eleventy --serve"
